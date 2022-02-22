@@ -6,7 +6,6 @@ printError()
 {
 
 	echo -e "\033[31mERROR:\033[0m $ERROR"
-
 }
 
 getNumber()
