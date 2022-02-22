@@ -21,7 +21,7 @@ if [[ $? == 0 ]]; then
 	"3") ./setPassword.sh ;;
 	esac
 
-# Executes if the password is incorrect. 
+# Executes if the password is incorrect.
 else
 	exit
 

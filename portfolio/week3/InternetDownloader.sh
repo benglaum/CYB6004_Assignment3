@@ -1,18 +1,20 @@
 #!/bin/bash
 
-i=1
-while [[ $i=1 ]]; do 
+#While loop keeps running until user types exit.
+while [[ 1 ]]; do
 
-echo "1) Enter a website"
-echo "2) Exit"
+	#Prompts user to enter a website.
+	read -p "Enter the URL of a website to download or exit to quit: " url
 
-read -p "Selection: " choice
+	#If exit is entered exit the loop.
+	if [[ "$url" == "exit" ]]; then
+		exit
 
-if [[ "$choice" == "2" ]]; then
-	exit
-else 
-	echo "BEN"
-fi
+	#Prompts user to enter a storage location and downloads the website.
+	else
+		read -p "Type the location where you want to store this website: " store
+		wget -P "$store" "$url"
+	fi
 
 done
 

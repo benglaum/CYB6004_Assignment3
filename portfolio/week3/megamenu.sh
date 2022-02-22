@@ -1,14 +1,56 @@
 #!/bin/bash
 
-cd  ~/student/scripts/portfolio/week3 ; ./passwordCheck.sh
+#Runs the password check script.
+cd ~/student/scripts/portfolio/week2; ./passwordCheck.sh
 
+#If the password is correct then the if statement is executed.
+if [ $? -eq 0 ]; then
 
-i=1
-while [[ $i==1  ]]; do
+	cd ~/student/scripts/portfolio/week3
 
-i=2
-done
+	#Loop runs until user selects to exit.
+	while [[ 1 ]]; do
 
+		#Displays Menu options.
+		echo -e "\e[34mMega Menu Options: \e[0m"
+		echo "  1. Create a folder"
+		echo "  2. Copy a folder"
+		echo "  3. Set a password"
+		echo "  4. Calculator"
+		echo "  5. Create Week Folders"
+		echo "  6. Check Filenames"
+		echo "  7. Download a File"
+		echo "  8. Exit"
 
+		#Prompts user to select item from menu.
+		read -p $'\e[31mSelect an option or exit to quit: \e[0m' choice
+
+		#Executes chosen script from selected.
+		case "$choice" in
+
+		"1") ~/student/scripts/portfolio/week2/folderCreator.sh ;;
+
+		"2") ~/student/scripts/portfolio/week2/folderCopier.sh ;;
+
+		"3") ~/student/scripts/portfolio/week2/setPassword.sh ;;
+
+		"4") ~/student/scripts/portfolio/week3/calculator.sh ;;
+
+		"5") ~/student/scripts/portfolio/week3/megafoldermaker.sh ;;
+
+		"6") ~/student/scripts/portfolio/week3/filenames.sh ;;
+
+		"7") ~/student/scripts/portfolio/week3/InternetDownloader.sh ;;
+
+		"8") exit ;;
+
+		"exit") exit ;;
+
+		esac
+	done
+
+else
+	exit
+fi
 
 

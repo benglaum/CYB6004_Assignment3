@@ -11,9 +11,9 @@ entredPassword=$(echo "$password" | sha256sum)
 
 # Checks if the entered password maches the stored password.
 if [ "$entredPassword" == "$storedPassword" ]; then
-	echo "Access Granted"
+	echo -e "\e[33m  Access Granted \e[0m"
 	exit 0
 else
-	echo "Access Denied"
+	echo -e "\e[31m  Access Denied \e[0m"
 	exit 1
 fi
