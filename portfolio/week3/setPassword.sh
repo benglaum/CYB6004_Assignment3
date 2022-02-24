@@ -4,7 +4,7 @@
 read -p "Type a folder name: " folderName
 
 # Ask user to enter a password.
-read  -p "Type a secret password: " password
+read  -p "Type a secret password: " -s password
 
 # Checks if the directory already exists before storing the password.
 if [ -d "$folderName" ]; then
@@ -20,3 +20,5 @@ else
 	mkdir "$folderName"
 	echo "$password" | sha256sum > "$folderName/secret.txt"
 fi
+
+echo " "
