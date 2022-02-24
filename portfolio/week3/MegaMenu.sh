@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Runs the password check script.
-./passwordCheck.sh
+./PasswordCheck.sh
 
 #If the password is correct then the if statement is executed.
 if [ $? -eq 0 ]; then
