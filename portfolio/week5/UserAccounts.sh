@@ -21,9 +21,6 @@ WholeLine() {
 	printf "$1\n"
 }
 
-AR="\x1b[32m"
-AN="\x1b[0m"
-
 #Colours
 R="\033[1;31m"
 G="\033[1;32m"
@@ -36,8 +33,6 @@ N="\033[0m"
 SPACE=" "
 VERTICAL="|"
 
-#cc $R "test" $N
-
 #Prints top vertical Line of table
 WholeLine "$SPACE"
 
@@ -47,11 +42,12 @@ printf "| $B%-20s$N | $B%-8s$N | $B%-8s$N | $B%-33s$N | $B%-20s$N |\n" "Username
 #Prints Vertical line of table with `|`
 WholeLine "$VERTICAL"
 
-awk -v r=$R -v g=$G -v y=$Y -v p=$P -v n=$N -F: '{printf "| %s%-20s%s | %s%-8s%s | %s%-8s%s | %s%-33s%s | %-20s |\n", r,$1,n,g,$3,n,y,$4,n,p,$6,n,$7}' /etc/passwd
-
+#Prints the filtered results.
+awk -v r=$R -v g=$G -v y=$Y -v p=$P -v n=$N -F: '{printf "| %s%-20s%s | %s%-8s%s | %s%-8s%s | %s%-33s%s | %-20s |\n", r,$1,n,g,$3,n,y,$4,n,p,$6,n,$7}' /etc/passwd | grep "/bin/bash"
 
 #Prints Bottom line of table.
 WholeLine "$VERTICAL"
+
 
 
 

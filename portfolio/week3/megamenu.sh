@@ -1,12 +1,10 @@
 #!/bin/bash
 
 #Runs the password check script.
-cd ~/student/scripts/portfolio/week2; ./passwordCheck.sh
+./passwordCheck.sh
 
 #If the password is correct then the if statement is executed.
 if [ $? -eq 0 ]; then
-
-	cd ~/student/scripts/portfolio/week3
 
 	#Loop runs until user selects to exit.
 	while [[ 1 ]]; do
@@ -28,19 +26,19 @@ if [ $? -eq 0 ]; then
 		#Executes chosen script from selected.
 		case "$choice" in
 
-		"1") ~/student/scripts/portfolio/week2/folderCreator.sh ;;
+		"1") ./folderCreator.sh ;;
 
-		"2") ~/student/scripts/portfolio/week2/folderCopier.sh ;;
+		"2") ./folderCopier.sh ;;
 
-		"3") ~/student/scripts/portfolio/week2/setPassword.sh ;;
+		"3") ./setPassword.sh ;;
 
-		"4") ~/student/scripts/portfolio/week3/calculator.sh ;;
+		"4") ./calculator.sh ;;
 
-		"5") ~/student/scripts/portfolio/week3/megafoldermaker.sh ;;
+		"5") ./megafoldermaker.sh ;;
 
-		"6") ~/student/scripts/portfolio/week3/filenames.sh ;;
+		"6") ./filenames.sh ;;
 
-		"7") ~/student/scripts/portfolio/week3/InternetDownloader.sh ;;
+		"7") ./InternetDownloader.sh ;;
 
 		"8") exit ;;
 
